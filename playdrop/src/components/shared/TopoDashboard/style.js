@@ -7,8 +7,9 @@ const ContainerTopo = styled.div`
   padding: 10px 0;
   width: 100%;
   .actions {
+    margin-right: 40px;
     a {
-      padding: 20px;
+      padding: 10px;
     }
   }
 `;

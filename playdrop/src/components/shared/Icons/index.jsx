@@ -216,7 +216,18 @@ const IconPhone = () => (
     </defs>
   </svg>
 );
-
+const PlayOutline = (propsPlayOutline) => (
+  <svg width={35} height={35} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M35 17.5C35 27.165 27.165 35 17.5 35S0 27.165 0 17.5 7.835 0 17.5 0 35 7.835 35 17.5Zm-33.25 0c0 8.698 7.052 15.75 15.75 15.75s15.75-7.052 15.75-15.75S26.198 1.75 17.5 1.75 1.75 8.802 1.75 17.5Z"
+      fill={propsPlayOutline.borderPlayOutline}
+    />
+    <path
+      d="M22.5 16.634a1 1 0 0 1 0 1.732l-6.75 3.897a1 1 0 0 1-1.5-.866v-7.794a1 1 0 0 1 1.5-.866l6.75 3.897Z"
+      fill="#FB8A03"
+    />
+  </svg>
+);
 export {
   IconBox,
   IconBell,
@@ -230,4 +241,5 @@ export {
   IconTrophy,
   IconUser,
   IconWorld,
+  PlayOutline,
 };

@@ -12,7 +12,7 @@ const Row = styled.div`
 
 const Col = styled.div`
   box-sizing: border-box;
-  padding: 0 15px;
+  padding: 9px 15px;
   width: ${({ xs }) => (xs ? `${(xs / 12) * 100}%` : "100%")};
   @media (min-width: 768px) {
     width: ${({ sm, xs }) =>
