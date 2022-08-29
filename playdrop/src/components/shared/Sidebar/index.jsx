@@ -3,12 +3,12 @@ import { ContainerSidebar, Links, Logo, MenuDesktop } from "./style";
 import { Playdrop } from "../Logo";
 import { NavLink } from "react-router-dom";
 import {
-  IconBox,
+  //IconBox,
   IconChat,
   IconDollar,
   IconGrid,
   IconLayout,
-  IconSuitcase,
+  //IconSuitcase,
   IconTrophy,
   IconUser,
   IconWorld,
@@ -23,7 +23,7 @@ export default function Sidebar() {
         </Logo>
         <Links>
           <NavLink
-            to="home"
+            to="/"
             className={(navData) => (navData.isActive ? "active" : "disable")}
           >
             <IconGrid colorGrid="#3058A4" heightGrid="24px" widthGrid="24px" />

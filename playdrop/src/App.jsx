@@ -7,7 +7,7 @@ import EditPass from "./components/pages/EditPass";
 
 function App() {
   return (
-    <Theme backgroundColor="orange">
+    <Theme backgroundColor="#E5E5E5">
       <Sidebar />
       <Content>
         <Routes>

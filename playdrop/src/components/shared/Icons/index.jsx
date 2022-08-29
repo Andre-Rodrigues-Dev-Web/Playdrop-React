@@ -170,12 +170,62 @@ const IconBox = (propsBox) => (
   </svg>
 );
 
+const IconBell = (propsBell) => (
+  <svg
+    width={propsBell.widthBell}
+    height={propsBell.heightBell}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M21.156 12.833C21.834 19.104 24.5 21 24.5 21h-21S7 18.51 7 9.8c0-1.98.737-3.88 2.05-5.28 1.313-1.4 3.095-2.187 4.95-2.187.393 0 .784.035 1.167.105M22.166 9.333a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM16.018 24.5c-.205.354-.499.648-.853.852"
+      stroke={propsBell.colorBell}
+      strokeWidth={1.925}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <circle cx={22.75} cy={5.476} r={5.25} fill="#FB6B03" />
+  </svg>
+);
+
+const IconCog = (propsCog) => (
+  <svg
+    width={propsCog.widthCog}
+    height={propsCog.heightCog}
+    fill={propsCog.colorCog}
+    xmlns="http://www.w3.org/2000/svg"
+  />
+);
+
+const IconPhone = () => (
+  <svg width={80} height={26} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M40.824 17.52H35.96L35.064 20h-1.536L37.56 8.912h1.68L43.256 20H41.72l-.896-2.48Zm-.416-1.184-2.016-5.632-2.016 5.632h4.032Zm5.39-6.528"
+      fill="#3058A4"
+    />
+    <g clipPath="url(#a)">
+      <path
+        d="M12.5.5C5.607.5 0 6.107 0 13v5.179c0 1.28 1.121 2.321 2.5 2.321h1.25A1.25 1.25 0 0 0 5 19.25v-6.429"
+        fill="#3058A4"
+      />
+    </g>
+    <defs>
+      <clipPath id="a">
+        <path fill="#fff" d="M0 0h25v26H0z" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
 export {
   IconBox,
+  IconBell,
   IconChat,
+  IconCog,
   IconDollar,
   IconGrid,
   IconLayout,
+  IconPhone,
   IconSuitcase,
   IconTrophy,
   IconUser,
