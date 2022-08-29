@@ -23,7 +23,7 @@ export default function Sidebar() {
         </Logo>
         <Links>
           <NavLink
-            to="/"
+            to="/home"
             className={(navData) => (navData.isActive ? "active" : "disable")}
           >
             <IconGrid colorGrid="#3058A4" heightGrid="24px" widthGrid="24px" />
@@ -41,7 +41,7 @@ export default function Sidebar() {
             <span>Meus Sites</span>
           </NavLink>
           <NavLink
-            to=""
+            to="/editpass"
             className={(navData) => (navData.isActive ? "active" : "disable")}
           >
             <IconLayout
@@ -52,21 +52,21 @@ export default function Sidebar() {
             <span>Meus Templates</span>
           </NavLink>
           <NavLink
-            to=""
+            to="/editpass"
             className={(navData) => (navData.isActive ? "active" : "disable")}
           >
             <IconChat colorChat="#3058A4" heightChat="24px" widthChat="24px" />
             <span>Mídias Sociais</span>
           </NavLink>
           <NavLink
-            to=""
+            to="/editpass"
             className={(navData) => (navData.isActive ? "active" : "disable")}
           >
             <IconUser colorUser="#3058A4" heightUser="24px" widthUser="24px" />
             <span>Fornecedores</span>
           </NavLink>
           <NavLink
-            to=""
+            to="/editpass"
             className={(navData) => (navData.isActive ? "active" : "disable")}
           >
             <IconTrophy
@@ -77,7 +77,7 @@ export default function Sidebar() {
             <span>Parceiros</span>
           </NavLink>
           <NavLink
-            to=""
+            to="/editpass"
             className={(navData) => (navData.isActive ? "active" : "disable")}
           >
             <IconDollar

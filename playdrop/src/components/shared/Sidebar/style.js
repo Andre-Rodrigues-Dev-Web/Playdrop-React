@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const ContainerSidebar = styled.div`
   background-color: #e5e5e5;
-  min-height: 100vh;
   @media (min-width: 768px) {
+    min-height: 100vh;
     width: ${(propsMenu) => propsMenu.widthSidebar};
   }
 `;
@@ -15,8 +15,9 @@ const Logo = styled.div`
 
 const MenuDesktop = styled.div`
   background-color: #fff;
-  min-height: 100vh;
   @media (min-width: 768px) {
+    min-height: 180vh;
+    position: fixed;
     padding-left: 20px;
     padding-top: 30px;
     width: 300px;

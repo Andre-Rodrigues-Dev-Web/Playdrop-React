@@ -7311,6 +7311,11 @@ react-error-overlay@^6.0.11:
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.11.tgz"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
+react-floating-label-input@^4.3.4:
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/react-floating-label-input/-/react-floating-label-input-4.3.4.tgz#d7afb011f7666c24f3deeec704258912be60358c"
+  integrity sha512-FFIeDbbH1uuVBSmzgNg4lkhwlJIHQ8ATfqJfct3ueWgDczHugh4p1e4w3VfMoeFti3EBewU3tt8RLSVLIP1iEA==
+
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"

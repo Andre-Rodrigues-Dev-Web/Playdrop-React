@@ -228,12 +228,37 @@ const PlayOutline = (propsPlayOutline) => (
     />
   </svg>
 );
+const IconDownload = (propsDownload) => (
+  <svg width={34} height={34} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="m17 21.25 5.667-5.667M17 21.25v-17 17Zm0 0-5.667-5.667L17 21.25ZM2.833 24.083l.88 3.52a2.833 2.833 0 0 0 2.748 2.147H27.54a2.834 2.834 0 0 0 2.748-2.146l.88-3.52"
+      stroke={propsDownload.colorDownload}
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const IconArrowLeft = (propsArrowLeft) => (
+  <svg width={34} height={34} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="m21.25 17-5.667-5.667M21.25 17h-17 17Zm0 0-5.667 5.667L21.25 17Z"
+      stroke={propsArrowLeft.colorArrowLeft}
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 export {
+  IconArrowLeft,
   IconBox,
   IconBell,
   IconChat,
   IconCog,
   IconDollar,
+  IconDownload,
   IconGrid,
   IconLayout,
   IconPhone,
