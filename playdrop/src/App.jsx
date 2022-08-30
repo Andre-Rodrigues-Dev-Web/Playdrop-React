@@ -3,6 +3,7 @@ import { Theme } from "./components/shared/Theme/style";
 import { Routes, Route } from "react-router-dom";
 // pages
 import Login from "./components/pages/Login";
+import RecoveryPass from "./components/pages/Recovery";
 import Home from "./components/pages/Home";
 import EditPass from "./components/pages/EditPass";
 
@@ -12,13 +13,14 @@ function App() {
       <Routes>
         <Route>
           <Route path="/" exact element={<Login />} />
+          <Route path="/recuperar-senha" exact element={<RecoveryPass />} />
         </Route>
         <Route>
           <Route
             index
             path="/home"
             element={
-              <Theme backgroundColor="#E5E5E5">
+              <Theme backgroundColor="#fff">
                 <Sidebar />
                 <Home />
               </Theme>
@@ -27,7 +29,7 @@ function App() {
           <Route
             path="/editpass"
             element={
-              <Theme backgroundColor="#E5E5E5">
+              <Theme backgroundColor="#fff">
                 <Sidebar />
                 <EditPass />
               </Theme>
