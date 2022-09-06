@@ -9,7 +9,7 @@ const Content = styled.div`
 const Theme = styled.div`
   background-color: ${(props) => props.backgroundColor};
   display: flex;
-  height: 100vh;
+  position: relative;
   width: 100%;
   @media (min-width: 768px) {
     flex-direction: row;

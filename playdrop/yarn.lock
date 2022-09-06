@@ -2623,7 +2623,7 @@ axe-core@^4.4.3:
 
 axios@^0.27.2:
   version "0.27.2"
-  resolved "https://registry.npmjs.org/axios/-/axios-0.27.2.tgz"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.27.2.tgz#207658cc8621606e586c85db4b41a750e756d972"
   integrity sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==
   dependencies:
     follow-redirects "^1.14.9"
@@ -7310,6 +7310,11 @@ react-error-overlay@^6.0.11:
   version "6.0.11"
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.11.tgz"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
+
+react-floating-label-input@^4.3.4:
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/react-floating-label-input/-/react-floating-label-input-4.3.4.tgz#d7afb011f7666c24f3deeec704258912be60358c"
+  integrity sha512-FFIeDbbH1uuVBSmzgNg4lkhwlJIHQ8ATfqJfct3ueWgDczHugh4p1e4w3VfMoeFti3EBewU3tt8RLSVLIP1iEA==
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
