@@ -2,7 +2,7 @@ import React from "react";
 import { IconBell, IconCog, IconPhone } from "../Icons";
 import { ContainerTopo } from "./style";
 import { Link } from "react-router-dom";
-import phone from "../../";
+import phone from "../../../assets/icons/phone.png";
 const TopoDashboard = () => {
   return (
     <ContainerTopo>
@@ -19,7 +19,7 @@ const TopoDashboard = () => {
         </Link>
         <Link to="/">
           <span>
-            <img src="../../../" />
+            <img src={phone} alt="ícone-phone" />
           </span>
         </Link>
       </ul>
