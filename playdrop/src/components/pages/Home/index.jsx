@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React from "react";
 import { BigCard, MinCard } from "../../shared/Cards";
 import { ContainerContent } from "../../shared/Containers/style";
@@ -23,16 +24,50 @@ export default function Home() {
   return (
     <Content>
       <TopoDashboard />
+=======
+import { BigCard, MinCard } from "../../shared/Cards";
+import { Col, Row, RowCard } from "../../shared/Grids/style";
+import {
+  IconArrowLeft,
+  IconBox,
+  IconChat,
+  IconDownload,
+  IconLayout,
+  IconWorld,
+  PlayOutline,
+} from "../../shared/Icons";
+
+import { ContainerContent } from "../../shared/Containers/style";
+import { Content } from "../../shared/Theme/style";
+import React from "react";
+import { Title } from "../../shared/Texts/style";
+import TopoDashboard from "../../shared/TopoDashboard";
+import introducaoImg from "../../../assets/posts/como-usar.png";
+import { isDesktop } from "react-device-detect";
+import listaFornecedores from "../../../assets/posts/lista-fornecedores.png";
+import materialApoio from "../../../assets/posts/material-apoio.png";
+import parceiros from "../../../assets/posts/parceiros.png";
+import wpImg from "../../../assets/posts/wp.png";
+
+const ViewTopo = () => {
+  if (isDesktop) {
+    return <TopoDashboard />;
+  }
+};
+export default function Home() {
+  return (
+    <Content>
+      {ViewTopo()}
+>>>>>>> Stashed changes
       <ContainerContent>
         <Row>
-          <Col md="12">
-            <Title colorTitle="#3058A4" fontSize="24px" />
-          </Col>
-          <Col md="12">
+          <Col className="mb-2" md="12">
             <Title colorTitle="#3058A4" fontSize="24px">
               Bem vindo, André
             </Title>
           </Col>
+        </Row>
+        <RowCard>
           <Col md="3">
             <MinCard
               iconCard={
@@ -81,6 +116,8 @@ export default function Home() {
               numberCard="18"
             />
           </Col>
+        </RowCard>
+        <Row>
           <Col md="12">
             <Title colorTitle="#3058A4" fontSize="16px">
               Primeiros passos

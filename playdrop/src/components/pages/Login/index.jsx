@@ -1,13 +1,15 @@
-import React, { useState } from "react";
-import axios from "axios";
-import TopoAuth from "../../shared/TopoAuth";
-import { Content, Wrap } from "./style";
 import { Col, Row } from "../../shared/Grids/style";
-import { FormAuth } from "../../shared/Forms/style";
-import imgLogin from "../../../assets/decorativos/login.png";
+import { Content, Wrap } from "./style";
 import { InputEmail, InputSenha } from "../../shared/Inputs";
-import { ButtonBlue } from "../../shared/Buttons/style";
 import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+
+import { ButtonBlue } from "../../shared/Buttons/style";
+import { FormAuth } from "../../shared/Forms/style";
+import TopoAuth from "../../shared/TopoAuth";
+import axios from "axios";
+import imgLogin from "../../../assets/decorativos/login.png";
+
 const Login = ({ onChange, value }) => {
   let navigate = useNavigate();
 
@@ -21,7 +23,7 @@ const Login = ({ onChange, value }) => {
     e.preventDefault();
     const sendData = {
       email: user.email,
-      password: user.password
+      password: user.password,
     };
 
     // console.log(sendData);
@@ -49,13 +51,13 @@ const Login = ({ onChange, value }) => {
   };
   return (
     <Wrap>
-      <TopoAuth />
+      <TopoAuth TextButtonAuth="Sou novo aqui, criar conta" />
       <Content>
         <Row>
-          <Col lg="6" md="6" xs="6">
+          <Col lg="6" md="6" xs="10">
             <img src={imgLogin} alt="imagem-login" className="decoration_img" />
           </Col>
-          <Col lg="6" md="6" xs="6">
+          <Col lg="6" md="6" xs="12">
             <FormAuth onSubmit={submitForm}>
               <h2>Área de Login</h2>
               <InputEmail onChange={handleChange} value={user.email} />

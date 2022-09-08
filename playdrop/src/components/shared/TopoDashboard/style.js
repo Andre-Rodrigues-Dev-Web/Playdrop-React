@@ -7,6 +7,8 @@ const ContainerTopo = styled.div`
   padding: 10px 0;
   width: 100%;
   .actions {
+    display: flex;
+    align-items: center;
     margin-right: 40px;
     a {
       padding: 10px;

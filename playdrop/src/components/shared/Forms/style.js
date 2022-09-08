@@ -1,9 +1,11 @@
 import styled from "styled-components";
+
 const FormAuth = styled.form`
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 2em 0;
+  width: 84%;
   a {
     color: #3058a4;
     font-family: "Poppins";

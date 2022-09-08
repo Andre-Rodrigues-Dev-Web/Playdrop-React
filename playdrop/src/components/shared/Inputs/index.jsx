@@ -1,6 +1,8 @@
-import React from "react";
-import FloatingLabelInput from "react-floating-label-input";
 import { Input, InputGroup } from "./style";
+
+import FloatingLabelInput from "react-floating-label-input";
+import React from "react";
+
 const InputEmail = ({ onChange, value }) => {
   return (
     <Input>
@@ -9,6 +11,17 @@ const InputEmail = ({ onChange, value }) => {
   );
 };
 
+const InputPass = (propsLabel, onChange, value) => {
+  return (
+    <Input>
+      <FloatingLabelInput
+        id="email"
+        label={propsLabel.textLabel}
+        value={value}
+      />
+    </Input>
+  );
+};
 const InputSenha = ({ onChange, value }) => {
   return (
     <InputGroup>
@@ -17,4 +30,4 @@ const InputSenha = ({ onChange, value }) => {
   );
 };
 
-export { InputEmail, InputSenha };
+export { InputEmail, InputPass, InputSenha };

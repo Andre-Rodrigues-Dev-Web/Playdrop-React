@@ -1,12 +1,25 @@
+import { Route, Routes } from "react-router-dom";
+
+import EditPass from "./components/pages/EditPass";
+import Home from "./components/pages/Home";
+import Login from "./components/pages/Login";
+import MenuMobile from "./components/shared/MenuMobile";
+import MeusSites from "./components/pages/MeusSites";
+import NewPass from "./components/pages/NewPass";
+import RecoveryPass from "./components/pages/Recovery";
 import Sidebar from "./components/shared/Sidebar";
 import { Theme } from "./components/shared/Theme/style";
-import { Routes, Route } from "react-router-dom";
-// pages
-import Login from "./components/pages/Login";
-import RecoveryPass from "./components/pages/Recovery";
-import Home from "./components/pages/Home";
-import EditPass from "./components/pages/EditPass";
+import { isMobile } from "react-device-detect";
 
+// pages
+const ViewMenu = () => {
+  if (isMobile) {
+    return <MenuMobile />;
+  } else {
+    return <Sidebar />;
+  }
+};
+//Return
 function App() {
   return (
     <>
@@ -14,6 +27,7 @@ function App() {
         <Route>
           <Route path="/" exact element={<Login />} />
           <Route path="/recuperar-senha" exact element={<RecoveryPass />} />
+          <Route path="/nova-senha" exact element={<NewPass />} />
         </Route>
         <Route>
           <Route
@@ -21,7 +35,7 @@ function App() {
             path="/home"
             element={
               <Theme backgroundColor="#fff">
-                <Sidebar />
+                {ViewMenu()}
                 <Home />
               </Theme>
             }
@@ -30,8 +44,17 @@ function App() {
             path="/editpass"
             element={
               <Theme backgroundColor="#fff">
-                <Sidebar />
+                {ViewMenu()}
                 <EditPass />
+              </Theme>
+            }
+          />
+          <Route
+            path="/meus-sites"
+            element={
+              <Theme backgroundColor="#fff">
+                {ViewMenu()}
+                <MeusSites />
               </Theme>
             }
           />

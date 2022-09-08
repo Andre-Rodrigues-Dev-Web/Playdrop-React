@@ -1,14 +1,15 @@
-import React from "react";
 import { CardBody, CardHeader, ContainerCard, Description } from "./style";
+
+import React from "react";
 
 export function MinCard(propsMinCard) {
   return (
     <>
-      <ContainerCard paddingCard="15px" valuePosition="center">
+      <ContainerCard paddingCard="30px 15px" valuePosition="center">
         <CardHeader valuePositionText="center">
           <h2>{propsMinCard.textHero}</h2>
         </CardHeader>
-        <CardBody directionFlexDesk="row" directionFlexMobile="column">
+        <CardBody directionFlexDesk="row" directionFlexMobile="row">
           {propsMinCard.iconCard}
           <h2 valueSize={36}>{propsMinCard.numberCard}</h2>
         </CardBody>
@@ -24,9 +25,9 @@ export function BigCard(propsBigCard) {
         <CardHeader>{propsBigCard.imgBigCard}</CardHeader>
         <CardBody
           directionFlexDesk="row"
-          directionFlexMobile="column"
+          directionFlexMobile="row"
           justifyCard="space-between"
-          valueSpace="22px 30px"
+          valueSpace="22px 20px"
         >
           <Description valueWidthText="232px">
             {propsBigCard.descriptionCard}

@@ -9,7 +9,6 @@ const ContainerCard = styled.div`
   flex-direction: column;
   align-items: ${(cardPosition) => cardPosition.valuePosition};
   justify-content: center;
-  gap: 10px;
   font-family: "Poppins", sans-serif;
   padding: ${(cardSpacePadding) => cardSpacePadding.paddingCard};
 `;
@@ -18,8 +17,7 @@ const CardBody = styled.div`
   align-items: center;
   flex-direction: ${(cardOrientation) => cardOrientation.directionFlexMobile};
   gap: 8px;
-  justify-content: ${(cardOrientationJustify) =>
-    cardOrientationJustify.justifyCard};
+  justify-content: center;
   padding: ${(cardSpacePadding) => cardSpacePadding.valueSpace};
   h2 {
     color: #313131;
@@ -51,9 +49,10 @@ const Description = styled.p`
   color: #3058a4;
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 16px;
   text-align: ${(cardPositionText) => cardPositionText.valuePositionText};
+  width: 230px;
   @media (min-width: 768px) {
     font-size: 16px;
     width: ${(cardWidthText) => cardWidthText.valueWidthText};

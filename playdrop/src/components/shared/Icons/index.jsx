@@ -251,7 +251,33 @@ const IconArrowLeft = (propsArrowLeft) => (
     />
   </svg>
 );
+
+const IconLock = (propsLock) => (
+  <svg
+    width={propsLock.widthLock}
+    height={propsLock.heightLock}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M27.125 38.75V27.125a19.375 19.375 0 1 1 38.75 0V38.75h3.875a7.75 7.75 0 0 1 7.75 7.75v31a7.75 7.75 0 0 1-7.75 7.75h-46.5a7.75 7.75 0 0 1-7.75-7.75v-31a7.75 7.75 0 0 1 7.75-7.75h3.875ZM23.25 46.5v31h46.5v-31h-46.5Zm11.625-7.75h23.25V27.125a11.625 11.625 0 0 0-23.25 0V38.75Zm19.375 15.5H62v15.5h-7.75v-15.5Z"
+      fill={propsLock.colorLock}
+    />
+  </svg>
+);
+
+const ClockProgress = () => (
+  <svg width={27} height={27} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M14.791.622v2.61c5.67.697 9.688 5.85 8.99 11.52-.594 4.703-4.288 8.435-8.99 8.99v2.584c7.104-.71 12.271-7.014 11.56-14.118-.58-6.135-5.45-10.979-11.56-11.586Zm-2.583.039a12.694 12.694 0 0 0-6.885 2.841L7.17 5.414a10.327 10.327 0 0 1 5.038-2.17V.661ZM3.502 5.324a12.768 12.768 0 0 0-2.855 6.884h2.584a10.355 10.355 0 0 1 2.118-5.037L3.502 5.324ZM18.02 8.979l-6.303 6.304-2.738-2.739-1.37 1.37 4.108 4.107 7.673-7.673-1.37-1.369ZM.66 14.792a12.967 12.967 0 0 0 2.855 6.884l1.834-1.847a10.336 10.336 0 0 1-2.105-5.037H.66Zm6.51 6.936-1.847 1.77a12.909 12.909 0 0 0 6.885 2.919v-2.584a10.336 10.336 0 0 1-5.038-2.105Z"
+      fill="#000"
+    />
+  </svg>
+);
 export {
+  ClockProgress,
   IconArrowLeft,
   IconBox,
   IconBell,
@@ -261,6 +287,7 @@ export {
   IconDownload,
   IconGrid,
   IconLayout,
+  IconLock,
   IconPhone,
   IconSuitcase,
   IconTrophy,

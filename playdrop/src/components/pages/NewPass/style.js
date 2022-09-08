@@ -9,11 +9,11 @@ const ContentRecovery = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 41px;
+    margin: 0 20px;
     text-align: center;
-    width: 340px;
+    width: 72%;
     button {
-      width: 340px;
+      width: 350px;
       a,
       a:hover {
         color: #fff;
@@ -41,7 +41,6 @@ const ContentRecovery = styled.div`
       }
     }
     .icon-unlock {
-      width: 80px;
       @media (min-width: 768px) {
         height: 77.5px;
         width: 76.38px;
@@ -50,7 +49,7 @@ const ContentRecovery = styled.div`
   }
   @media (min-width: 768px) {
     margin: 0 auto;
-    padding: 4em 0;
+    padding: 1em 0;
   }
 `;
 
