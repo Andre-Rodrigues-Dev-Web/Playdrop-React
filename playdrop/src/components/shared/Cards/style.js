@@ -17,11 +17,8 @@ const CardBody = styled.div`
   align-items: center;
   flex-direction: ${(cardOrientation) => cardOrientation.directionFlexMobile};
   gap: 8px;
-<<<<<<< Updated upstream
-=======
   justify-content: center;
   padding: ${(cardSpacePadding) => cardSpacePadding.valueSpace};
->>>>>>> Stashed changes
   h2 {
     color: #313131;
     font-style: normal;
@@ -42,8 +39,6 @@ const CardHeader = styled.div`
     font-size: 16px;
     line-height: 16px;
   }
-<<<<<<< Updated upstream
-=======
   @media (min-width: 768px) {
     img {
       width: 100%;
@@ -62,7 +57,6 @@ const Description = styled.p`
     font-size: 16px;
     width: ${(cardWidthText) => cardWidthText.valueWidthText};
   }
->>>>>>> Stashed changes
 `;
 
 export { ContainerCard, CardBody, CardHeader };

@@ -228,9 +228,6 @@ const PlayOutline = (propsPlayOutline) => (
     />
   </svg>
 );
-<<<<<<< Updated upstream
-export {
-=======
 const IconDownload = (propsDownload) => (
   <svg width={34} height={34} fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
@@ -282,12 +279,12 @@ const ClockProgress = () => (
 export {
   ClockProgress,
   IconArrowLeft,
->>>>>>> Stashed changes
   IconBox,
   IconBell,
   IconChat,
   IconCog,
   IconDollar,
+  IconDownload,
   IconGrid,
   IconLayout,
   IconLock,

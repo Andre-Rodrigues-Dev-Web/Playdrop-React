@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-import React from "react";
-=======
 import { Col, Row } from "../../shared/Grids/style";
 import { Description, Title } from "./style";
 
@@ -12,7 +9,6 @@ import { InputPass } from "../../shared/Inputs";
 import React from "react";
 import TopoDashboard from "../../shared/TopoDashboard";
 import { isDesktop } from "react-device-detect";
->>>>>>> Stashed changes
 
 const ViewTopo = () => {
   if (isDesktop) {
@@ -20,9 +16,6 @@ const ViewTopo = () => {
   }
 };
 export default function EditPass() {
-<<<<<<< Updated upstream
-  return <div> Edição de senha</div>;
-=======
   return (
     <Content>
       {ViewTopo()}
@@ -46,5 +39,4 @@ export default function EditPass() {
       </ContainerContent>
     </Content>
   );
->>>>>>> Stashed changes
 }

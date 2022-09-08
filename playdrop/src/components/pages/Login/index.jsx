@@ -1,13 +1,3 @@
-<<<<<<< Updated upstream
-import React from "react";
-import TopoAuth from "../../shared/TopoAuth";
-
-const Login = () => {
-  return (
-    <>
-      <TopoAuth />
-    </>
-=======
 import { Col, Row } from "../../shared/Grids/style";
 import { Content, Wrap } from "./style";
 import { InputEmail, InputSenha } from "../../shared/Inputs";
@@ -79,7 +69,6 @@ const Login = ({ onChange, value }) => {
         </Row>
       </Content>
     </Wrap>
->>>>>>> Stashed changes
   );
 };
 

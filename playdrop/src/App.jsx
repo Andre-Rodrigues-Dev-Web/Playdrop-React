@@ -1,11 +1,3 @@
-<<<<<<< Updated upstream
-import Sidebar from "./components/shared/Sidebar";
-import { Content, Theme } from "./components/shared/Theme/style";
-import { Routes, Route } from "react-router-dom";
-// pages
-import Home from "./components/pages/Home";
-import EditPass from "./components/pages/EditPass";
-=======
 import { Route, Routes } from "react-router-dom";
 
 import EditPass from "./components/pages/EditPass";
@@ -18,7 +10,6 @@ import RecoveryPass from "./components/pages/Recovery";
 import Sidebar from "./components/shared/Sidebar";
 import { Theme } from "./components/shared/Theme/style";
 import { isMobile } from "react-device-detect";
->>>>>>> Stashed changes
 
 // pages
 const ViewMenu = () => {
@@ -31,17 +22,6 @@ const ViewMenu = () => {
 //Return
 function App() {
   return (
-<<<<<<< Updated upstream
-    <Theme backgroundColor="#E5E5E5">
-      <Sidebar />
-      <Content>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="editpass" element={<EditPass />} />
-        </Routes>
-      </Content>
-    </Theme>
-=======
     <>
       <Routes>
         <Route>
@@ -81,7 +61,6 @@ function App() {
         </Route>
       </Routes>
     </>
->>>>>>> Stashed changes
   );
 }
 
