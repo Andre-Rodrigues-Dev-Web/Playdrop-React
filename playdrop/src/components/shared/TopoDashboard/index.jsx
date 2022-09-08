@@ -1,9 +1,13 @@
-import React from "react";
-import { IconBell } from "../Icons";
 import { ContainerTopo } from "./style";
+import { IconBell } from "../Icons";
 import { Link } from "react-router-dom";
+<<<<<<< Updated upstream
+=======
+import React from "react";
+>>>>>>> Stashed changes
 import cog from "../../../assets/icons/cog.png";
 import phone from "../../../assets/icons/phone.png";
+
 const TopoDashboard = () => {
   return (
     <ContainerTopo>
@@ -20,7 +24,11 @@ const TopoDashboard = () => {
         </Link>
         <Link to="/">
           <span>
+<<<<<<< Updated upstream
             <img src={phone} alt="icone-phone" />
+=======
+            <img src={phone} alt="ícone-phone" />
+>>>>>>> Stashed changes
           </span>
         </Link>
       </ul>

@@ -9,6 +9,24 @@ const Row = styled.div`
     flex-direction: row;
   }
 `;
+const RowCard = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  div {
+    padding: 10px;
+    width: 160px;
+  }
+  @media (min-width: 768px) {
+    gap: 45px;
+    div {
+      padding: 10px;
+      width: 299px;
+    }
+  }
+`;
 
 const Col = styled.div`
   box-sizing: border-box;
@@ -41,4 +59,4 @@ const Col = styled.div`
         : "100%"};
   }
 `;
-export { Col, Row };
+export { Col, Row, RowCard };

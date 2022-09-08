@@ -4,10 +4,11 @@ const ContainerContent = styled.div`
   background-color: #dbeafe80;
   border-radius: 0.75rem;
   margin: 20px auto;
-  padding-top: 1.5rem;
-  padding-bottom: 3.5rem;
+  padding: 1rem;
+  width: 100%;
   @media (min-width: 768px) {
-    width: 1040px;
+    padding: 3.5rem 3rem;
+    width: 90%;
   }
 `;
 

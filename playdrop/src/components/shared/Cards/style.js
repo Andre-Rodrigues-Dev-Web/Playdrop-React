@@ -9,7 +9,6 @@ const ContainerCard = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
   font-family: "Poppins", sans-serif;
   padding: 20px;
 `;
@@ -18,6 +17,11 @@ const CardBody = styled.div`
   align-items: center;
   flex-direction: ${(cardOrientation) => cardOrientation.directionFlexMobile};
   gap: 8px;
+<<<<<<< Updated upstream
+=======
+  justify-content: center;
+  padding: ${(cardSpacePadding) => cardSpacePadding.valueSpace};
+>>>>>>> Stashed changes
   h2 {
     color: #313131;
     font-style: normal;
@@ -38,6 +42,27 @@ const CardHeader = styled.div`
     font-size: 16px;
     line-height: 16px;
   }
+<<<<<<< Updated upstream
+=======
+  @media (min-width: 768px) {
+    img {
+      width: 100%;
+    }
+  }
+`;
+const Description = styled.p`
+  color: #3058a4;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: ${(cardPositionText) => cardPositionText.valuePositionText};
+  width: 230px;
+  @media (min-width: 768px) {
+    font-size: 16px;
+    width: ${(cardWidthText) => cardWidthText.valueWidthText};
+  }
+>>>>>>> Stashed changes
 `;
 
 export { ContainerCard, CardBody, CardHeader };
