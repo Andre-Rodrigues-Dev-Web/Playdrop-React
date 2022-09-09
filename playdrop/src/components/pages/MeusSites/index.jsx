@@ -42,7 +42,7 @@ const MeusSites = () => {
           <Col md="4">
             <ButtonBlue>Criar Novo Site</ButtonBlue>
           </Col>
-          <Col lg="4" md="6" xs="12">
+          <Col md="6" xs="12">
             <Sites
               NomeSite="Site teste"
               urlSite="teste.com.br"

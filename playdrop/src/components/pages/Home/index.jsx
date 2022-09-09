@@ -15,7 +15,12 @@ import { Content } from "../../shared/Theme/style";
 import React from "react";
 import { Title } from "../../shared/Texts/style";
 import TopoDashboard from "../../shared/TopoDashboard";
+import introducaoImg from "../../../assets/posts/como-usar.png";
 import { isDesktop } from "react-device-detect";
+import listaFornecedores from "../../../assets/posts/lista-fornecedores.png";
+import materialApoio from "../../../assets/posts/material-apoio.png";
+import parceiros from "../../../assets/posts/parceiros.png";
+import wpImg from "../../../assets/posts/wp.png";
 
 const ViewTopo = () => {
   if (isDesktop) {
@@ -90,7 +95,20 @@ export default function Home() {
               Primeiros passos
             </Title>
           </Col>
-          <Col md="6"></Col>
+          <Col md="6">
+            <BigCard
+              descriptionCard="Como utilizar a plataforma e os materiais de apoio"
+              imgBigCard={<img src={introducaoImg} alt="imagem-introducao" />}
+              playCard={<PlayOutline borderPlayOutline="#FB8A03" />}
+            />
+          </Col>
+          <Col md="6">
+            <BigCard
+              descriptionCard="Como importar templates no Wordpress"
+              imgBigCard={<img src={wpImg} alt="imagem-wp" />}
+              playCard={<PlayOutline borderPlayOutline="#FB8A03" />}
+            />
+          </Col>
         </Row>
       </ContainerContent>
     </Content>

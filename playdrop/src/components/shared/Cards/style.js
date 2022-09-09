@@ -7,10 +7,17 @@ const ContainerCard = styled.div`
   border-radius: 8.51948px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-family: "Poppins", sans-serif;
-  padding: 20px;
+`;
+const ContainerMinCard = styled.div`
+  background: #ffffff;
+  border: 0.851948px solid #f5f5f5;
+  box-shadow: 0px 12.7792px 9.37143px -1.7039px #e6eeff;
+  border-radius: 8.51948px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
 `;
 const CardBody = styled.div`
   display: flex;
@@ -39,6 +46,9 @@ const CardHeader = styled.div`
     font-size: 16px;
     line-height: 16px;
   }
+  img {
+    width: 100%;
+  }
   @media (min-width: 768px) {
     img {
       width: 100%;
@@ -59,4 +69,4 @@ const Description = styled.p`
   }
 `;
 
-export { ContainerCard, CardBody, CardHeader, Description };
+export { ContainerCard, ContainerMinCard, CardBody, CardHeader, Description };

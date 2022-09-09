@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ContainerSidebar = styled.div`
-  background-color: #e5e5e5;
+  background-color: #fff;
   min-height: 100vh;
   @media (min-width: 768px) {
     width: ${(propsMenu) => propsMenu.widthSidebar};

@@ -10,7 +10,7 @@ const ButtonBlue = styled.button`
   font-weight: 500;
   font-size: 20px;
   line-height: 16px;
-  padding: 20px;
+  padding: 20px 40px;
   text-align: center;
   a,
   a:hover {

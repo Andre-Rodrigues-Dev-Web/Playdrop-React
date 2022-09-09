@@ -1,11 +1,17 @@
-import { CardBody, CardHeader, ContainerCard, Description } from "./style";
+import {
+  CardBody,
+  CardHeader,
+  ContainerCard,
+  ContainerMinCard,
+  Description,
+} from "./style";
 
 import React from "react";
 
 export function MinCard(propsMinCard) {
   return (
     <>
-      <ContainerCard paddingCard="30px 15px" valuePosition="center">
+      <ContainerMinCard paddingCard="30px 15px" valuePosition="center">
         <CardHeader valuePositionText="center">
           <h2>{propsMinCard.textHero}</h2>
         </CardHeader>
@@ -13,7 +19,7 @@ export function MinCard(propsMinCard) {
           {propsMinCard.iconCard}
           <h2>{propsMinCard.numberCard}</h2>
         </CardBody>
-      </ContainerCard>
+      </ContainerMinCard>
     </>
   );
 }

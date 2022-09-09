@@ -69,7 +69,7 @@ export default function Sidebar() {
         </Logo>
         <Links>
           <NavLink
-            to="/"
+            to="/home"
             className={(navData) => (navData.isActive ? "active" : "disable")}
           >
             <IconGrid colorGrid="#3058A4" heightGrid="24px" widthGrid="24px" />

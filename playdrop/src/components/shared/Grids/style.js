@@ -26,6 +26,20 @@ const RowCard = styled.div`
       width: 299px;
     }
   }
+  @media (min-width: 1000px) and (max-width: 1300px) {
+    gap: 36px;
+    div {
+      padding: 10px;
+      width: 160px;
+    }
+  }
+  @media (min-width: 1400px) and (max-width: 1500px) {
+    gap: 36px;
+    [class*="col-"] {
+      padding: 10px;
+      width: 160px;
+    }
+  }
 `;
 
 const Col = styled.div`
