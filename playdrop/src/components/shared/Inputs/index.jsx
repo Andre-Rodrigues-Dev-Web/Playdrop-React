@@ -3,7 +3,7 @@ import { Input, InputGroup } from "./style";
 import FloatingLabelInput from "react-floating-label-input";
 import React from "react";
 
-const InputEmail = ({ onChange, value }) => {
+const InputEmail = ({ value }) => {
   return (
     <Input>
       <FloatingLabelInput id="email" label="Digite seu email" value={value} />

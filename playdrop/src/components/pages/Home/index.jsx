@@ -15,12 +15,7 @@ import { Content } from "../../shared/Theme/style";
 import React from "react";
 import { Title } from "../../shared/Texts/style";
 import TopoDashboard from "../../shared/TopoDashboard";
-import introducaoImg from "../../../assets/posts/como-usar.png";
 import { isDesktop } from "react-device-detect";
-import listaFornecedores from "../../../assets/posts/lista-fornecedores.png";
-import materialApoio from "../../../assets/posts/material-apoio.png";
-import parceiros from "../../../assets/posts/parceiros.png";
-import wpImg from "../../../assets/posts/wp.png";
 
 const ViewTopo = () => {
   if (isDesktop) {

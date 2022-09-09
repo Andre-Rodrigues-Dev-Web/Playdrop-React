@@ -59,4 +59,4 @@ const Description = styled.p`
   }
 `;
 
-export { ContainerCard, CardBody, CardHeader };
+export { ContainerCard, CardBody, CardHeader, Description };
