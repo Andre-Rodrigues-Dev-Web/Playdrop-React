@@ -29,6 +29,23 @@ video {
   height: auto;
   width: 100%;
 }
+/*Status*/
+.status_success {
+  background-color: #2ecc71;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.status_danger {
+  background-color: #e74c3c;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
 /*Dropdown*/
 .bt_dropdown {
   background-color: transparent;
@@ -58,4 +75,48 @@ video {
     left: 20px;
     width: 300px;
   }
+}
+/*Form dominio*/
+.form-dominio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-dominio input {
+  border: #3058a4 1px solid;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+}
+.form-dominio button {
+  background-color: #3058a4;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+}
+/*Lista de sites*/
+.list_sites {
+  margin-top: 20px;
+}
+.list_sites li {
+  background-color: #71bce1;
+  border-radius: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.126);
+  color: #fff;
+  padding: 10px;
+  width: 380px;
+}
+.list_sites li h2 {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.list_sites li p {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
 }

@@ -17,6 +17,15 @@ const ButtonBlue = styled.button`
     color: #fff;
     text-decoration: none;
   }
+  @media (min-width: 768px) {
+    font-size: 1.4em;
+  }
+  @media (min-width: 1000px) and (max-width: 1300px) {
+    font-size: 1.2em;
+  }
+  @media (min-width: 1400px) and (max-width: 1500px) {
+    font-size: 1.2em;
+  }
 `;
 
 export { ButtonBlue };

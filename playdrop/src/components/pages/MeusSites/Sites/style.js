@@ -5,7 +5,6 @@ const CardSites = styled.div`
   border: 0.851948px solid #eeeeee;
   box-shadow: 0px 12.7792px 9.37143px -1.7039px #e6eeff;
   border-radius: 0.75rem;
-  padding: 2rem;
   position: relative;
   .status_site {
     background: #f0f0f0;
@@ -27,11 +26,21 @@ const CardSites = styled.div`
     }
   }
 `;
-
+const CardBody = styled.div`
+  padding: 2em;
+`;
 const Bottom = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
+  div {
+    padding: 10px 0;
+    text-align: center;
+    width: 33.33%;
+    &:first-child {
+      border-bottom: 4px solid #333;
+    }
+  }
 `;
 
 const DataVenc = styled.p`
@@ -78,4 +87,4 @@ const Url = styled.a`
   font-size: 18px;
   line-height: 16px;
 `;
-export { Bottom, CardSites, Id, DataVenc, Load, NameSite, Url };
+export { Bottom, CardSites, CardBody, Id, DataVenc, Load, NameSite, Url };

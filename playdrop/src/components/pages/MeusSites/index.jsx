@@ -1,21 +1,53 @@
 import { Col, Row } from "../../shared/Grids/style";
+import { ModalBody, ModalHeader } from "../../shared/Modal/style";
 
 import { ButtonBlue } from "../../shared/Buttons/style";
 import { ContainerContent } from "../../shared/Containers/style";
 import { Content } from "../../shared/Theme/style";
+import FiltroDominio from "./Filtro";
 import { IconWorld } from "../../shared/Icons";
+import Modal from "react-modal";
 import React from "react";
 import Sites from "./Sites";
 import { TitleSite } from "./style";
 import TopoDashboard from "../../shared/TopoDashboard";
 import { isDesktop } from "react-device-detect";
 
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+
+// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
+
 const ViewTopo = () => {
   if (isDesktop) {
     return <TopoDashboard />;
   }
 };
+
 const MeusSites = () => {
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = "#f00";
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
   return (
     <Content>
       {ViewTopo()}
@@ -40,7 +72,24 @@ const MeusSites = () => {
             </p>
           </Col>
           <Col md="4">
-            <ButtonBlue>Criar Novo Site</ButtonBlue>
+            <ButtonBlue onClick={openModal}>Criar Novo Site</ButtonBlue>
+            <Modal
+              isOpen={modalIsOpen}
+              onAfterOpen={afterOpenModal}
+              onRequestClose={closeModal}
+              style={customStyles}
+              contentLabel="Example Modal"
+            >
+              <ModalHeader>
+                <h2>Registro de domínio</h2>
+                <button className="bt_close_modal" onClick={closeModal}>
+                  close
+                </button>
+              </ModalHeader>
+              <ModalBody>
+                <FiltroDominio />
+              </ModalBody>
+            </Modal>
           </Col>
           <Col md="6" xs="12">
             <Sites
