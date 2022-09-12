@@ -1,15 +1,14 @@
 import { Col, Row } from "../../shared/Grids/style";
+import { ContentTab, Tab, Tabs, TitleSite } from "./style";
 import { ModalBody, ModalHeader } from "../../shared/Modal/style";
+import React, { useState } from "react";
 
 import { ButtonBlue } from "../../shared/Buttons/style";
 import { ContainerContent } from "../../shared/Containers/style";
 import { Content } from "../../shared/Theme/style";
-import FiltroDominio from "./Filtro";
 import { IconWorld } from "../../shared/Icons";
 import Modal from "react-modal";
-import React from "react";
 import Sites from "./Sites";
-import { TitleSite } from "./style";
 import TopoDashboard from "../../shared/TopoDashboard";
 import { isDesktop } from "react-device-detect";
 
@@ -48,6 +47,14 @@ const MeusSites = () => {
   function closeModal() {
     setIsOpen(false);
   }
+  //Estado das Tabs
+  const [active, setActive] = useState(0);
+  const handleClick = (e) => {
+    const index = parseInt(e.target.id, 0);
+    if (index !== active) {
+      setActive(index);
+    }
+  };
   return (
     <Content>
       {ViewTopo()}
@@ -81,13 +88,29 @@ const MeusSites = () => {
               contentLabel="Example Modal"
             >
               <ModalHeader>
-                <h2>Registro de domínio</h2>
+                <h2>Registro de site</h2>
                 <button className="bt_close_modal" onClick={closeModal}>
                   close
                 </button>
               </ModalHeader>
               <ModalBody>
-                <FiltroDominio />
+                <Tabs>
+                  <Tab onClick={handleClick} active={active === 0} id={0}>
+                    Content1
+                  </Tab>
+
+                  <Tab onClick={handleClick} active={active === 1} id={1}>
+                    Content2
+                  </Tab>
+                </Tabs>
+                <>
+                  <ContentTab active={active === 0}>
+                    <h1>Content 1</h1>
+                  </ContentTab>
+                  <ContentTab active={active === 1}>
+                    <h1>Content 2</h1>
+                  </ContentTab>
+                </>
               </ModalBody>
             </Modal>
           </Col>

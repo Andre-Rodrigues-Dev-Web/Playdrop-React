@@ -14,19 +14,26 @@ const InputPass = (propsLabel, onChange, value) => {
   return (
     <Input>
       <FloatingLabelInput
-        id="email"
+        id="pass"
         label={propsLabel.textLabel}
         value={value}
       />
     </Input>
   );
 };
+const InputText = (propsInputLabel) => {
+  return (
+    <Input>
+      <FloatingLabelInput id="texto" label={propsInputLabel.LabelText} />
+    </Input>
+  );
+};
 const InputSenha = ({ onChange, value }) => {
   return (
     <InputGroup>
-      <FloatingLabelInput id="email" label="Digite sua senha" value={value} />
+      <FloatingLabelInput id="pass2" label="Digite sua senha" value={value} />
     </InputGroup>
   );
 };
 
-export { InputEmail, InputPass, InputSenha };
+export { InputText, InputEmail, InputPass, InputSenha };

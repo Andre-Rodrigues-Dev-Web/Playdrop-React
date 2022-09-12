@@ -62,12 +62,12 @@ const DropDownMenu = () => {
         <span>Meu Perfil</span>
       </button>
       {open && (
-        <div class="dropdown-wrapper">
-          <ul class="dropdown-menu">
-            <li class="dropdown-menu__item">
+        <div className="dropdown-wrapper">
+          <ul className="dropdown-menu">
+            <li className="dropdown-menu__item">
               <Link to="/">Editar Perfil</Link>
             </li>
-            <li class="dropdown-menu__item">
+            <li className="dropdown-menu__item">
               <Link to="/">Alterar senha</Link>
             </li>
           </ul>

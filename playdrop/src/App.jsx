@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 import EditPass from "./components/pages/EditPass";
+import EditProfile from "./components/pages/EditProfile";
 import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import MenuMobile from "./components/shared/MenuMobile";
@@ -41,7 +42,16 @@ function App() {
             }
           />
           <Route
-            path="/editpass"
+            path="/editar-perfil"
+            element={
+              <Theme backgroundColor="#fff">
+                {ViewMenu()}
+                <EditProfile />
+              </Theme>
+            }
+          />
+          <Route
+            path="/alterar-senha"
             element={
               <Theme backgroundColor="#fff">
                 {ViewMenu()}

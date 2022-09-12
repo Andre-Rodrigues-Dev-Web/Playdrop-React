@@ -48,10 +48,10 @@ const DropDownMenu = () => {
         <div class="dropdown-wrapper">
           <ul class="dropdown-menu">
             <li class="dropdown-menu__item">
-              <Link to="/">Editar Perfil</Link>
+              <Link to="/editar-perfil">Editar Perfil</Link>
             </li>
             <li class="dropdown-menu__item">
-              <Link to="/editpass">Alterar senha</Link>
+              <Link to="/alterar-senha">Alterar senha</Link>
             </li>
           </ul>
         </div>
