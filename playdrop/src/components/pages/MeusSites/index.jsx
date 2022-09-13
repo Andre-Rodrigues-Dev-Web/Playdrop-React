@@ -38,7 +38,6 @@ const ViewTopo = () => {
 };
 
 const MeusSites = () => {
-  let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   function openModal() {
@@ -47,14 +46,6 @@ const MeusSites = () => {
   function closeModal() {
     setIsOpen(false);
   }
-  //Estado das Tabs
-  const [active, setActive] = useState(0);
-  const handleClick = (e) => {
-    const index = parseInt(e.target.id, 0);
-    if (index !== active) {
-      setActive(index);
-    }
-  };
   //Cadastro de Sites
   const [produto, setProduto] = useState({
     segmento: "",
@@ -74,16 +65,13 @@ const MeusSites = () => {
     e.preventDefault();
     //console.log(produto.titulo);
 
-    await fetch(
-      "http://localhost/www/Playdrop-React/api/meus-sites/cadastro.php",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ produto }),
-      }
-    )
+    await fetch("https://app.playdrop.com.br/api/meus-sites/cadastro.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ produto }),
+    })
       .then((response) => response.json())
       .then((responseJson) => {
         //console.log(responseJson)
@@ -102,7 +90,7 @@ const MeusSites = () => {
       .catch(() => {
         setStatus({
           type: "erro",
-          mensagem: "Produto não cadastro com sucesso, tente mais tarde!",
+          mensagem: "Site não foi cadastro com sucesso, tente mais tarde!",
         });
       });
   };
@@ -112,7 +100,7 @@ const MeusSites = () => {
   const [data, setData] = useState([]);
 
   const getProdutos = async () => {
-    fetch("http://localhost/www/Playdrop-React/api/lista.php")
+    fetch("https://app.playdrop.com.br/api/lista.php")
       .then((response) => response.json())
       .then((responseJson) =>
         //console.log(responseJson),
@@ -240,7 +228,7 @@ const MeusSites = () => {
                           <div
                             className={`form_group_button ${position_center}`}
                           >
-                            <button>Cadastrar</button>
+                            <button type="submit">Cadastrar</button>
                           </div>
                         </Col>
                       </Row>
@@ -256,16 +244,16 @@ const MeusSites = () => {
               </ModalBody>
             </Modal>
           </Col>
-          <Col md="6" xs="12">
-            {Object.values(data).map((produto) => (
+          {Object.values(data).map((produto) => (
+            <Col md="6" xs="12">
               <Sites
                 NomeSite={produto.nome}
                 urlSite={produto.dominio}
                 idSite={produto.id}
                 vencimentoSite="03/12/2023"
               />
-            ))}
-          </Col>
+            </Col>
+          ))}
         </Row>
       </ContainerContent>
     </Content>

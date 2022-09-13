@@ -16,8 +16,7 @@ const ViewTopo = () => {
     return <TopoDashboard />;
   }
 };
-export default function EditPass(propsEdit) {
-  const [id] = useState(propsEdit.match.params.id);
+export default function EditPass() {
   const [senha, setSenha] = useState("");
   const [status, setStatus] = useState({
     type: "",
@@ -58,20 +57,6 @@ export default function EditPass(propsEdit) {
         });
       });
   };
-
-  useEffect(() => {
-    const getProduto = async () => {
-      await fetch(
-        "http://localhost/www/Playdrop-React/api/editar-senha/visualizar.php?id=" +
-          id
-      )
-        .then((response) => response.json())
-        .then((responseJson) => {
-          setSenha(responseJson.produto.senha);
-        });
-    };
-    getProduto();
-  }, [id]);
   return (
     <Content>
       {ViewTopo()}
@@ -98,7 +83,7 @@ export default function EditPass(propsEdit) {
                 onChange={(e) => setSenha(e.target.value)}
                 name="senha"
               />
-              <ButtonBlue>Cadastrar Senha</ButtonBlue>
+              <ButtonBlue type="submit">Cadastrar Senha</ButtonBlue>
             </FormCrud>
           </Col>
           <Col lg="6" md="6" xs="12">

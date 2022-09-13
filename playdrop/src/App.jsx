@@ -6,6 +6,7 @@ import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import MenuMobile from "./components/shared/MenuMobile";
 import MeusSites from "./components/pages/MeusSites";
+import Midias from "./components/pages/Midias";
 import NewPass from "./components/pages/NewPass";
 import RecoveryPass from "./components/pages/Recovery";
 import Sidebar from "./components/shared/Sidebar";
@@ -65,6 +66,15 @@ function App() {
               <Theme backgroundColor="#fff">
                 {ViewMenu()}
                 <MeusSites />
+              </Theme>
+            }
+          />
+          <Route
+            path="/midias-sociais"
+            element={
+              <Theme backgroundColor="#fff">
+                {ViewMenu()}
+                <Midias />
               </Theme>
             }
           />

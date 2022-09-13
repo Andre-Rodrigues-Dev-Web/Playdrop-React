@@ -13,15 +13,15 @@ $response_json = file_get_contents("php://input");
 $dados = json_decode($response_json, true);
 
 if($dados){
-    $query_produto = "UPDATE login SET senha=:senha WHERE id=:id";
-    $edit_produto = $conn->prepare($query_produto);
+    $query_pass = "UPDATE login SET senha=:senha WHERE id=:id";
+    $edit_pass = $conn->prepare($query_produto);
 
-    $edit_produto->bindParam(':senha', $dados['senha'], PDO::PARAM_STR);
-    $edit_produto->bindParam(':id', $dados['id'], PDO::PARAM_INT);
+    $edit_pass->bindParam(':senha', $dados['senha'], PDO::PARAM_STR);
+    $edit_pass->bindParam(':id', $dados['id'], PDO::PARAM_INT);
 
-    $edit_produto->execute();
+    $edit_pass->execute();
 
-    if($edit_produto->rowCount()){
+    if($edit_pass->rowCount()){
         $response = [
             "erro" => false,
             "mensagem" => "Senha editada com sucesso!"

@@ -27,5 +27,17 @@ const ButtonBlue = styled.button`
     font-size: 1.2em;
   }
 `;
-
-export { ButtonBlue };
+const ButtonOrange = styled.a`
+  background: linear-gradient(89.97deg, #fb8a03 0.44%, #ffb052 99.97%);
+  border: 0.851948px solid #eeeeee;
+  box-shadow: 0px 12.7792px 9.37143px -1.7039px #e6eeff;
+  border-radius: 8.51948px;
+  color: #fff;
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 14px;
+  padding: 13px 3em;
+`;
+export { ButtonBlue, ButtonOrange };
