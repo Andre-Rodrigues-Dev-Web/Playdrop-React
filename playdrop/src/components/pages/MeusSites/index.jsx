@@ -74,13 +74,16 @@ const MeusSites = () => {
     e.preventDefault();
     //console.log(produto.titulo);
 
-    await fetch("http://localhost/www/Playdrop-React/api/cadastro.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ produto }),
-    })
+    await fetch(
+      "http://localhost/www/Playdrop-React/api/meus-sites/cadastro.php",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ produto }),
+      }
+    )
       .then((response) => response.json())
       .then((responseJson) => {
         //console.log(responseJson)
