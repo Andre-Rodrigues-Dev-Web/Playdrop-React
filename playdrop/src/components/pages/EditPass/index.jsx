@@ -1,3 +1,4 @@
+import { AlertDanger, AlertSuccess } from "../../shared/Messagens/style";
 import { Col, Row } from "../../shared/Grids/style";
 import { Description, Title } from "./style";
 import React, { useEffect, useState } from "react";
@@ -16,7 +17,7 @@ const ViewTopo = () => {
   }
 };
 export default function EditPass(propsEdit) {
-  const [id] = useState(props.match.params.id);
+  const [id] = useState(propsEdit.match.params.id);
   const [senha, setSenha] = useState("");
   const [status, setStatus] = useState({
     type: "",
@@ -25,13 +26,16 @@ export default function EditPass(propsEdit) {
   const editProduto = async (e) => {
     e.preventDefault();
 
-    await fetch("http://localhost/celke/editar.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ senha }),
-    })
+    await fetch(
+      "http://localhost/www/Playdrop-React/api/editar-senha/editar.php",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ senha }),
+      }
+    )
       .then((response) => response.json())
       .then((responseJson) => {
         console.log(responseJson);
@@ -57,7 +61,10 @@ export default function EditPass(propsEdit) {
 
   useEffect(() => {
     const getProduto = async () => {
-      await fetch("http://localhost/celke/visualizar.php?id=" + id)
+      await fetch(
+        "http://localhost/www/Playdrop-React/api/editar-senha/visualizar.php?id=" +
+          id
+      )
         .then((response) => response.json())
         .then((responseJson) => {
           setSenha(responseJson.produto.senha);
@@ -70,10 +77,27 @@ export default function EditPass(propsEdit) {
       {ViewTopo()}
       <ContainerContent>
         <Row>
+          <Col md="12">
+            {status.type === "erro" ? (
+              <AlertDanger>{status.mensagem}</AlertDanger>
+            ) : (
+              ""
+            )}
+            {status.type === "success" ? (
+              <AlertSuccess>{status.mensagem}</AlertSuccess>
+            ) : (
+              ""
+            )}
+          </Col>
           <Col lg="6" md="6" xs="12">
-            <FormCrud>
+            <FormCrud onSubmit={editProduto}>
               <InputPass textLabel="Senha Atual" />
-              <InputPass textLabel="Nova Senha" />
+              <InputPass
+                textLabel="Nova Senha"
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
+                name="senha"
+              />
               <ButtonBlue>Cadastrar Senha</ButtonBlue>
             </FormCrud>
           </Col>
