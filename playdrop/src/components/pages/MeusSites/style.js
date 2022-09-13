@@ -13,35 +13,42 @@ const TitleSite = styled.h2`
   line-height: 16px;
 `;
 
-//Tabs
-const Tabs = styled.div`
-  overflow: hidden;
-  background: #fff;
-  font-family: Open Sans;
-  height: 3em;
-`;
-
-const Tab = styled.button`
-  border: none;
-  outline: none;
-  cursor: pointer;
-  width: 40%;
-  position: relative;
-
-  margin-right: 0.1em;
-  font-size: 1em;
-  border: ${(props) => (props.active ? "1px solid #ccc" : "")};
-  border-bottom: ${(props) => (props.active ? "none" : "")};
-  background-color: ${(props) => (props.active ? "white" : "lightgray")};
-  height: ${(props) => (props.active ? "3em" : "2.6em; top:.4em")};
-  transition: background-color 0.5s ease-in-out;
-
-  :hover {
-    background-color: white;
+const FormDomain = styled.form`
+  width: 100%;
+  .form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    input {
+      border: 2px solid #3058a4;
+      outline: none;
+      padding: 13px 8px;
+      width: 100%;
+    }
+    label {
+      color: #3058a4;
+      font-weight: 600;
+    }
+  }
+  .form_group_button {
+    display: flex;
+    flex-direction: row;
+    &.center {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    button {
+      background: linear-gradient(89.97deg, #3058a4 0.44%, #2964d3 99.97%);
+      border-radius: 0.75rem;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      font-weight: 600;
+      padding: 1rem 4rem;
+    }
   }
 `;
-const ContentTab = styled.div`
-  ${(props) => (props.active ? "" : "display:none")}
-`;
 
-export { ContentTab, Tabs, Tab, TitleSite };
+export { FormDomain, TitleSite };

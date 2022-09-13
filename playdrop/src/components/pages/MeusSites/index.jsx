@@ -1,7 +1,10 @@
+import "react-tabs/style/react-tabs.css";
+
 import { Col, Row } from "../../shared/Grids/style";
-import { ContentTab, Tab, Tabs, TitleSite } from "./style";
+import { FormDomain, TitleSite } from "./style";
 import { ModalBody, ModalHeader } from "../../shared/Modal/style";
 import React, { useState } from "react";
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
 import { ButtonBlue } from "../../shared/Buttons/style";
 import { ContainerContent } from "../../shared/Containers/style";
@@ -12,6 +15,8 @@ import Sites from "./Sites";
 import TopoDashboard from "../../shared/TopoDashboard";
 import { isDesktop } from "react-device-detect";
 
+//Tabs
+
 const customStyles = {
   content: {
     top: "50%",
@@ -20,6 +25,7 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
+    width: 780,
   },
 };
 
@@ -55,6 +61,8 @@ const MeusSites = () => {
       setActive(index);
     }
   };
+  //classes estilo
+  const position_center = "center";
   return (
     <Content>
       {ViewTopo()}
@@ -90,27 +98,69 @@ const MeusSites = () => {
               <ModalHeader>
                 <h2>Registro de site</h2>
                 <button className="bt_close_modal" onClick={closeModal}>
-                  close
+                  Fechar
                 </button>
               </ModalHeader>
               <ModalBody>
                 <Tabs>
-                  <Tab onClick={handleClick} active={active === 0} id={0}>
-                    Content1
-                  </Tab>
+                  <TabList>
+                    <Tab>Possuo domínio</Tab>
+                    <Tab>Não possuo domínio</Tab>
+                  </TabList>
 
-                  <Tab onClick={handleClick} active={active === 1} id={1}>
-                    Content2
-                  </Tab>
+                  <TabPanel>
+                    <FormDomain>
+                      <Row>
+                        <Col md="12">
+                          <div className="form_group">
+                            <label htmlFor="dominio">
+                              Exemplo de domínio: www.meusite.com.br
+                            </label>
+                            <input
+                              type="text"
+                              id="dominio"
+                              placeholder="Domínio"
+                            />
+                          </div>
+                        </Col>
+                        <Col md="6">
+                          <div className="form_group">
+                            <label htmlFor="modalidade">
+                              Qual modalidade, Ex: Landing page
+                            </label>
+                            <input
+                              type="text"
+                              id="modalidade"
+                              placeholder="Modalidade"
+                            />
+                          </div>
+                        </Col>
+                        <Col md="6">
+                          <div className="form_group">
+                            <label htmlFor="modalidade">
+                              Qual o segmento de mercado ex: Petshop
+                            </label>
+                            <input
+                              type="text"
+                              id="segmento"
+                              placeholder="Segmento"
+                            />
+                          </div>
+                        </Col>
+                        <Col md="12">
+                          <div
+                            className={`form_group_button ${position_center}`}
+                          >
+                            <button>Cadastrar</button>
+                          </div>
+                        </Col>
+                      </Row>
+                    </FormDomain>
+                  </TabPanel>
+                  <TabPanel>
+                    <h2>Any content 2</h2>
+                  </TabPanel>
                 </Tabs>
-                <>
-                  <ContentTab active={active === 0}>
-                    <h1>Content 1</h1>
-                  </ContentTab>
-                  <ContentTab active={active === 1}>
-                    <h1>Content 2</h1>
-                  </ContentTab>
-                </>
               </ModalBody>
             </Modal>
           </Col>
