@@ -1,15 +1,17 @@
 import "react-tabs/style/react-tabs.css";
 
+import { AlertDanger, AlertSuccess } from "../../shared/Messagens/style";
 import { Col, Row } from "../../shared/Grids/style";
 import { FormDomain, TitleSite } from "./style";
 import { ModalBody, ModalHeader } from "../../shared/Modal/style";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
 import { ButtonBlue } from "../../shared/Buttons/style";
 import { ContainerContent } from "../../shared/Containers/style";
 import { Content } from "../../shared/Theme/style";
 import { IconWorld } from "../../shared/Icons";
+import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import Sites from "./Sites";
 import TopoDashboard from "../../shared/TopoDashboard";
@@ -29,8 +31,6 @@ const customStyles = {
   },
 };
 
-// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
-
 const ViewTopo = () => {
   if (isDesktop) {
     return <TopoDashboard />;
@@ -44,12 +44,6 @@ const MeusSites = () => {
   function openModal() {
     setIsOpen(true);
   }
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00";
-  }
-
   function closeModal() {
     setIsOpen(false);
   }
@@ -61,8 +55,71 @@ const MeusSites = () => {
       setActive(index);
     }
   };
+  //Cadastro de Sites
+  const [produto, setProduto] = useState({
+    segmento: "",
+    modalidade: "",
+    dominio: "",
+  });
+
+  const [status, setStatus] = useState({
+    type: "",
+    mensagem: "",
+  });
+
+  const valorInput = (e) =>
+    setProduto({ ...produto, [e.target.name]: e.target.value });
+
+  const cadProduto = async (e) => {
+    e.preventDefault();
+    //console.log(produto.titulo);
+
+    await fetch("http://localhost/www/Playdrop-React/api/cadastro.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ produto }),
+    })
+      .then((response) => response.json())
+      .then((responseJson) => {
+        //console.log(responseJson)
+        if (responseJson.erro) {
+          setStatus({
+            type: "erro",
+            mensagem: responseJson.messagem,
+          });
+        } else {
+          setStatus({
+            type: "success",
+            mensagem: responseJson.messagem,
+          });
+        }
+      })
+      .catch(() => {
+        setStatus({
+          type: "erro",
+          mensagem: "Produto não cadastro com sucesso, tente mais tarde!",
+        });
+      });
+  };
   //classes estilo
   const position_center = "center";
+  //Lista Sites
+  const [data, setData] = useState([]);
+
+  const getProdutos = async () => {
+    fetch("http://localhost/www/Playdrop-React/api/lista.php")
+      .then((response) => response.json())
+      .then((responseJson) =>
+        //console.log(responseJson),
+        setData(responseJson.records)
+      );
+  };
+
+  useEffect(() => {
+    getProdutos();
+  }, []);
   return (
     <Content>
       {ViewTopo()}
@@ -90,7 +147,6 @@ const MeusSites = () => {
             <ButtonBlue onClick={openModal}>Criar Novo Site</ButtonBlue>
             <Modal
               isOpen={modalIsOpen}
-              onAfterOpen={afterOpenModal}
               onRequestClose={closeModal}
               style={customStyles}
               contentLabel="Example Modal"
@@ -109,8 +165,32 @@ const MeusSites = () => {
                   </TabList>
 
                   <TabPanel>
-                    <FormDomain>
+                    {status.type === "erro" ? (
+                      <AlertDanger>{status.mensagem}</AlertDanger>
+                    ) : (
+                      ""
+                    )}
+                    {status.type === "success" ? (
+                      <AlertSuccess>{status.mensagem}</AlertSuccess>
+                    ) : (
+                      ""
+                    )}
+                    <FormDomain onSubmit={cadProduto}>
                       <Row>
+                        <Col md="12">
+                          <div className="form_group">
+                            <label htmlFor="nome">
+                              Digite o nome de seu site
+                            </label>
+                            <input
+                              type="text"
+                              id="nome"
+                              placeholder="Nome da sua empresa, blog, ou serviço"
+                              name="nome"
+                              onChange={valorInput}
+                            />
+                          </div>
+                        </Col>
                         <Col md="12">
                           <div className="form_group">
                             <label htmlFor="dominio">
@@ -120,6 +200,8 @@ const MeusSites = () => {
                               type="text"
                               id="dominio"
                               placeholder="Domínio"
+                              name="dominio"
+                              onChange={valorInput}
                             />
                           </div>
                         </Col>
@@ -132,18 +214,22 @@ const MeusSites = () => {
                               type="text"
                               id="modalidade"
                               placeholder="Modalidade"
+                              name="modalidade"
+                              onChange={valorInput}
                             />
                           </div>
                         </Col>
                         <Col md="6">
                           <div className="form_group">
-                            <label htmlFor="modalidade">
+                            <label htmlFor="segmento">
                               Qual o segmento de mercado ex: Petshop
                             </label>
                             <input
                               type="text"
                               id="segmento"
                               placeholder="Segmento"
+                              name="segmento"
+                              onChange={valorInput}
                             />
                           </div>
                         </Col>
@@ -158,19 +244,24 @@ const MeusSites = () => {
                     </FormDomain>
                   </TabPanel>
                   <TabPanel>
-                    <h2>Any content 2</h2>
+                    <h2>Cadastre-se no Registro.br e obtenha um domínio.</h2>
+                    <Link to="https://registro.br/">
+                      Clique aqui para registrar um domínio
+                    </Link>
                   </TabPanel>
                 </Tabs>
               </ModalBody>
             </Modal>
           </Col>
           <Col md="6" xs="12">
-            <Sites
-              NomeSite="Site teste"
-              urlSite="teste.com.br"
-              idSite="1"
-              vencimentoSite="03/12/2023"
-            />
+            {Object.values(data).map((produto) => (
+              <Sites
+                NomeSite={produto.nome}
+                urlSite={produto.dominio}
+                idSite={produto.id}
+                vencimentoSite="03/12/2023"
+              />
+            ))}
           </Col>
         </Row>
       </ContainerContent>

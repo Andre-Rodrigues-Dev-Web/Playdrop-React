@@ -7,19 +7,20 @@ header("Access-Control-Allow-Headers: *");
 header("Access-Control-Allow-Methods: GET,PUT,POST,DELETE");
 
 //Incluir a conexao
-include_once 'conexao.php';
+include_once 'conn.php';
 
 $response_json = file_get_contents("php://input");
 $dados = json_decode($response_json, true);
 
 if($dados){
 
-    $query_produto = "INSERT INTO produtos (titulo, descricao) VALUES (:titulo, :descricao)";
+    $query_produto = "INSERT INTO meus_sites (nome, segmento, modalidade, dominio) VALUES (:nome, :segmento, :modalidade, :dominio)";
     $cad_produto = $conn->prepare($query_produto);
 
-    $cad_produto->bindParam(':titulo', $dados['produto']['titulo'], PDO::PARAM_STR);
-    $cad_produto->bindParam(':descricao', $dados['produto']['descricao'], PDO::PARAM_STR);
-
+    $cad_produto->bindParam(':nome', $dados['produto']['nome'], PDO::PARAM_STR);
+    $cad_produto->bindParam(':segmento', $dados['produto']['segmento'], PDO::PARAM_STR);
+    $cad_produto->bindParam(':modalidade', $dados['produto']['modalidade'], PDO::PARAM_STR);
+    $cad_produto->bindParam(':dominio', $dados['produto']['dominio'], PDO::PARAM_STR);
     $cad_produto->execute();
 
     if($cad_produto->rowCount()){
