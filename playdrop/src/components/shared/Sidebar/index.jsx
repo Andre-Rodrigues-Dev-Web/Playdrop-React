@@ -99,7 +99,7 @@ export default function Sidebar() {
             <span>Meus Templates</span>
           </NavLink>
           <NavLink
-            to=""
+            to="/midias-sociais"
             className={(navData) => (navData.isActive ? "active" : "disable")}
           >
             <IconChat colorChat="#3058A4" heightChat="24px" widthChat="24px" />

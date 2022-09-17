@@ -27,7 +27,7 @@ const ButtonBlue = styled.button`
     font-size: 1.2em;
   }
 `;
-const ButtonOrange = styled.a`
+const ButtonOrange = styled.button`
   background: linear-gradient(89.97deg, #fb8a03 0.44%, #ffb052 99.97%);
   border: 0.851948px solid #eeeeee;
   box-shadow: 0px 12.7792px 9.37143px -1.7039px #e6eeff;
@@ -39,5 +39,8 @@ const ButtonOrange = styled.a`
   font-size: 16px;
   line-height: 14px;
   padding: 13px 3em;
+  a {
+    color: #fff;
+  }
 `;
 export { ButtonBlue, ButtonOrange };

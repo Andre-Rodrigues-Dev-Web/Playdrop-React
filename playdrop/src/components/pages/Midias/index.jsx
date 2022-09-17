@@ -5,6 +5,7 @@ import { CardMidia } from "./style";
 import { ContainerContent } from "../../shared/Containers/style";
 import { Content } from "../../shared/Theme/style";
 import { IconChat } from "../../shared/Icons";
+import { Link } from "react-router-dom";
 import React from "react";
 import { Title } from "../../shared/Texts/style";
 
@@ -41,7 +42,9 @@ const Midias = () => {
                 <p>12</p>
               </div>
               <div className="form_footer">
-                <ButtonOrange>Mais detalhes</ButtonOrange>
+                <ButtonOrange>
+                  <Link to="/">Mais detalhes</Link>
+                </ButtonOrange>
               </div>
             </CardMidia>
           </Col>
